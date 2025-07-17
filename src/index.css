@@ -2,9 +2,13 @@
   font-family: "Nunito";
   src: url(./assets/Fonts/Nunito-Regular.ttf);
 }
-
+@font-face {
+  font-family: "Comic";
+  src: url(./assets/Fonts/ComicRelief-Regular.ttf);
+}
 @import "tailwindcss";
 
 @theme {
   --font-nunito: "Nunito", sans-serif;
+  --font-comic: "Comic", sans-serif;
 }

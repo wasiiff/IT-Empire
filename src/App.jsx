@@ -1,19 +1,12 @@
-import Carousel from './Components/Carousel'
-import Navbar from './Components/Navbar'
-import Solutions from './Components/Solutions'
-import TopBar from './Components/TopBar'
-import './index.css'
+import "./index.css";
+import Home from "./Pages/Home";
 
 function App() {
-
   return (
-    <div className='font-nunito'>
-      <TopBar/>
-      <Navbar/>
-      <Carousel/>
-      <Solutions/>
+    <div className="font-nunito">
+      <Home />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

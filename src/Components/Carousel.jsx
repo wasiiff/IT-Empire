@@ -1,8 +1,9 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
 import Office from "../assets/Office.jpg";
 import Real from "../assets/Real.jpg";
 import School from "../assets/School.jpg";
+import { IoIosArrowForward } from "react-icons/io";
+import { IoIosArrowBack } from "react-icons/io";
 
 const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -10,18 +11,24 @@ const Carousel = () => {
   const slides = [
     {
       src: Office,
-      title: "Beautiful Nature",
-      description: "Explore the wonders of natural landscapes",
+      title: "Welcome to IT Empire",
+      description: "We Design Your Dreams",
+      btntext: "About Us",
+      btn: true,
     },
     {
       src: Real,
-      title: "Urban Life",
-      description: "Discover vibrant cityscapes after dark",
+      title: "Real Estate Manager (REM)",
+      description:
+        "Mobile Application developed for Property Dealers & Real Estate Advisors",
+      btntext: "Visit Website",
+      btn: true,
     },
     {
       src: School,
-      title: "Modern Tech",
-      description: "The latest in technological advancements",
+      title: "School Management System",
+      description: "A perfect Solution for any school",
+      btn: false,
     },
   ];
 
@@ -43,11 +50,11 @@ const Carousel = () => {
     }, 5000);
 
     return () => clearInterval(interval);
-  }, []); // Removed currentIndex from dependency array to avoid reset on every slide
+  }, [nextSlide]);
 
   return (
     <div
-      className="relative w-full h-screen overflow-hidden"
+      className="relative w-full h-screen overflow-hidden hidden md:block"
       aria-roledescription="carousel"
       aria-label="Image carousel"
     >
@@ -60,7 +67,6 @@ const Carousel = () => {
             }`}
             aria-hidden={index !== currentIndex}
           >
-            {/* Background Image */}
             <div
               className="absolute inset-0 bg-cover bg-center"
               style={{
@@ -68,16 +74,17 @@ const Carousel = () => {
               }}
             />
 
-            {/* Overlay Text */}
-            <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center z-20">
-              <div className="text-center text-white max-w-2xl px-4">
+            <div className="absolute inset-0 bg-opacity-40 flex items-center justify-start ml-20 z-20">
+              <div className="text-left text-white max-w-2xl px-4">
                 <h2 className="text-4xl md:text-6xl font-bold mb-4">
                   {slide.title}
                 </h2>
                 <p className="text-xl md:text-2xl mb-8">{slide.description}</p>
-                <button className="px-8 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg text-lg font-semibold transition-colors">
-                  Learn More
-                </button>
+                {slide.btn && (
+                  <button className="px-8 py-3 bg-blue-600 hover:bg-blue-700 rounded-4xl text-lg font-bold transition-colors">
+                    {slide.btntext}
+                  </button>
+                )}
               </div>
             </div>
           </div>
@@ -87,59 +94,18 @@ const Carousel = () => {
       {/* Navigation Arrows */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white bg-opacity-30 hover:bg-opacity-50 text-white p-2 rounded-full z-30"
+        className="absolute left-4 top-1/2 -translate-y-1/2 hover:bg-white/20 bg-opacity-30 hover:bg-opacity-50 text-white p-2 rounded-full z-30"
         aria-label="Previous slide"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-8 w-8"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M15 19l-7-7 7-7"
-          />
-        </svg>
+        <IoIosArrowBack />
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white bg-opacity-30 hover:bg-opacity-50 text-white p-2 rounded-full z-30"
+        className="absolute right-4 top-1/2 -translate-y-1/2 hover:bg-white/20 bg-opacity-30 hover:bg-opacity-50 text-white p-2 rounded-full z-30"
         aria-label="Next slide"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-8 w-8"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M9 5l7 7-7 7"
-          />
-        </svg>
+        <IoIosArrowForward />
       </button>
-
-      {/* Indicators */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-2 z-30">
-        {slides.map((_, index) => (
-          <button
-            key={`indicator-${index}`}
-            onClick={() => setCurrentIndex(index)}
-            className={`w-3 h-3 rounded-full transition-colors ${
-              index === currentIndex ? "bg-white" : "bg-white bg-opacity-50"
-            }`}
-            aria-label={`Go to slide ${index + 1}`}
-            aria-current={index === currentIndex}
-          />
-        ))}
-      </div>
     </div>
   );
 };

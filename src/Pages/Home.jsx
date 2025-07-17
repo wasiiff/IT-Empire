@@ -1,9 +1,28 @@
-import React from 'react'
+import React from "react";
+import Carousel from "../Components/Carousel";
+import Facts from "../Components/Facts";
+import Navbar from "../Components/Navbar";
+import Skills from "../Components/Skills";
+import Solutions from "../Components/Solutions";
+import Specialization from "../Components/Specialization";
+import TopBar from "../Components/TopBar";
+import UseSoftware from "../Components/UseSoftware";
+import Form from "../Components/Form";
 
 function Home() {
   return (
-    <div className='h-screen w-full'>Home</div>
-  )
+    <>
+      <TopBar />
+      <Navbar />
+      <Carousel />
+      <Solutions />
+      <Specialization />
+      <Skills />
+      <UseSoftware />
+      <Facts />
+      <Form />
+    </>
+  );
 }
 
-export default Home
+export default Home;

@@ -27,8 +27,8 @@ const buttons = [
 
 function TopBar() {
   return (
-    <div className="w-full py-1 px-16 bg-white flex justify-between shadow-inner drop-shadow-xl">
-      <ul className="text-blue-950 hover:text-red-600 text-xs flex justify-items-start items-center gap-x-3 font-extralight">
+    <div className="w-full py-1 lg:px-16 md:px-4 bg-white md:flex lg:flex justify-between shadow-inner drop-shadow-xl hidden ">
+      <ul className="text-blue-950 hover:text-red-600 text-xs lg:flex lg:justify-items-start items-center gap-x-3 font-extralight">
         <li className="cursor-pointer flex space-x-1">
           <LuTabletSmartphone />
           <p className="font-semibold">+923-111-222-783</p>
