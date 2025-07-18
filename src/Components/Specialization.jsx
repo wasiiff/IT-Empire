@@ -98,12 +98,12 @@ function Specialization() {
         style={BgImg}
         className="w-full h-max flex flex-col items-center bg-slate-50/50 py-20"
       >
-        <p className="text-center text-4xl text-white font-semibold font-nunito mt-24">
+        <p className="text-center text-4xl text-white font-semibold font-nunito md:mt-24">
           We are Specialized in
         </p>
         <h1 className="w-20 h-0.5 bg-[#da0266] mt-2"></h1>
 
-        <div className="w-full grid lg:grid-cols-3 grid-cols-1 gap-10 mt-24 px-16">
+        <div className="w-full grid lg:grid-cols-3 grid-cols-1 gap-10 mt-24 px-3 md:px-16">
           {specializedData.map((data) => {
             const Icon = data.icon;
 

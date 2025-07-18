@@ -100,7 +100,7 @@ function Solutions() {
       </p>
       <h1 className="w-20 h-0.5 bg-[#da0266] mt-2"></h1>
 
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 mt-24 md:px-20">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 mt-24 px-3 md:px-20">
         {solutionData.map((data) => {
           const Icon = data.icon;
           const BtnIcon = data.btnIcon;

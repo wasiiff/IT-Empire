@@ -46,12 +46,12 @@ const skill = [
 function Skills() {
   return (
     <div className="w-full h-max flex flex-col items-center bg-slate-50/50 py-24">
-      <p className="text-center text-4xl text-blue-950 font-bold font-nunito mt-24">
+      <p className="text-center text-4xl text-blue-950 font-bold font-nunito md:mt-24">
         Our Skills
       </p>
       <h1 className="w-20 h-0.5 bg-[#da0266] mt-2"></h1>
 
-      <div className="mt-20 w-full px-20 space-y-4">
+      <div className="mt-10 md:mt-20 w-full px-5 md:px-20 space-y-4">
         {skill.map((skill) => {
           return (
             <div className="w-full bg-gray-300 rounded-2xl overflow-hidden shadow-inner">

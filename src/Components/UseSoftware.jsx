@@ -45,7 +45,7 @@ function UseSoftware() {
 
   return (
     <div className="w-full h-max flex flex-col items-center bg-slate-50/50 py-2">
-      <p className="text-center text-4xl text-blue-950 font-bold font-nunito mt-24">
+      <p className="text-center text-4xl text-blue-950 font-bold font-nunito md:mt-24">
         Ready To Install / Use Softwares
       </p>
       <h1 className="w-20 h-0.5 bg-[#da0266] mt-4"></h1>

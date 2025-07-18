@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Logo from "../assets/Logo.png";
 import { IoMenu, IoClose } from "react-icons/io5";
+import { Link } from "react-router-dom"; // Fixed import
 
 function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
@@ -10,11 +11,11 @@ function Navbar() {
   };
 
   const navLinks = [
-    { id: 1, name: "Home" },
-    { id: 2, name: "Portfolio" },
-    { id: 3, name: "Services" },
-    { id: 4, name: "About" },
-    { id: 5, name: "Contact" },
+    { id: 1, name: "Home", to: "/" },
+    { id: 2, name: "Portfolio", to: "portfolio" },
+    { id: 3, name: "Services", to: "/" },
+    { id: 4, name: "About", to: "/" },
+    { id: 5, name: "Contact", to: "/" },
   ];
 
   return (
@@ -33,25 +34,25 @@ function Navbar() {
         </div>
 
         <div className="hidden sm:block">
-          <img src={Logo} alt="Company Logo" className="h-20 md:h-24 w-auto" />
+          <img src={Logo} alt="Company Logo" className="h-20 w-auto" />
         </div>
 
         <ul className="hidden md:flex space-x-6 lg:space-x-8 items-center">
           {navLinks.map((link) => (
             <li key={link.id}>
-              <a
-                href={`#${link.name.toLowerCase()}`}
+              <Link
+                to={link.to}
                 className="font-semibold text-blue-950 hover:text-red-600 transition-colors duration-200"
               >
                 {link.name}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu (Fixed Link & Positioning) */}
         <div
-          className={`sm:hidden absolute top-24 left-0 right-0 bg-white shadow-lg py-4 z-50 transition-all duration-300 ease-in-out ${
+          className={`sm:hidden absolute top-full left-0 right-0 bg-white shadow-lg py-4 z-50 transition-all duration-300 ease-in-out ${
             showMenu
               ? "translate-y-0 opacity-100"
               : "-translate-y-full opacity-0 pointer-events-none"
@@ -60,13 +61,13 @@ function Navbar() {
           <ul className="flex flex-col items-center space-y-6">
             {navLinks.map((link) => (
               <li key={link.id}>
-                <a
-                  href={`#${link.name.toLowerCase()}`}
+                <Link
+                  to={link.to}
                   className="font-semibold text-blue-950 hover:text-red-600 transition-colors duration-200 text-lg"
                   onClick={() => setShowMenu(false)}
                 >
                   {link.name}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

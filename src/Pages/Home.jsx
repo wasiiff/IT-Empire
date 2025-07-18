@@ -8,12 +8,13 @@ import Specialization from "../Components/Specialization";
 import TopBar from "../Components/TopBar";
 import UseSoftware from "../Components/UseSoftware";
 import Form from "../Components/Form";
+import Footer from "../Components/Footer";
+import Links from "../Components/Links";
 
 function Home() {
   return (
     <>
-      <TopBar />
-      <Navbar />
+
       <Carousel />
       <Solutions />
       <Specialization />
