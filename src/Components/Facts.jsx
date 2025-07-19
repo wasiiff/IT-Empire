@@ -45,7 +45,7 @@ function Facts() {
     >
       <div className="font-nunito flex flex-col items-center justify-center pt-20 ">
         <h1 className="text-3xl font-bold text-[#3e396b]">Facts About Us</h1>
-        <div className="grid grid-cols-2 md:grid-cols-4 w-full gap-x-64 gap-y-16 md:gap-x-10 mt-14 px-24 md:px-40">
+        <div className="grid grid-cols-2 md:grid-cols-4 w-full gap-x-44 gap-y-16 md:gap-x-10 mt-14 px-24 md:px-40">
           {factsData.map((fact, index) => {
             return (
               <div
